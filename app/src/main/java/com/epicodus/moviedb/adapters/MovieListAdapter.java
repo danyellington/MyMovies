@@ -23,10 +23,11 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>{
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
-
+    public static final String TAG = MovieListAdapter.class.getSimpleName();
 
     private ArrayList<Movie> mMovies = new ArrayList<>();
     private Context mContext;
@@ -58,8 +59,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         ImageView mImageView;
         @BindView(R.id.titleTextView)
         TextView mTitleTextView;
-        @BindView(R.id.genreTextView)
-        TextView mGenreTextView;
+//        @BindView(R.id.genreTextView)
+//        TextView mGenreTextView;
 
         private Context mContext;
 
@@ -77,10 +78,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
                     .resize(MAX_WIDTH, MAX_HEIGHT)
                     .centerCrop()
                     .into(mImageView);
+            Log.d("something", movie.toString());
 
             mTitleTextView.setText(movie.getTitle());
-//            mGenreTextView.setText(movie.getGenre());
-
         }
 
         @Override

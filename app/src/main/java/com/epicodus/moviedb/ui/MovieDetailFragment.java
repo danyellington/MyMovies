@@ -1,7 +1,5 @@
 package com.epicodus.moviedb.ui;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,7 +23,8 @@ public class MovieDetailFragment extends Fragment {
     ImageView mImageLabel;
     @BindView(R.id.titleTextView)
     TextView mTitleLabel;
-
+    @BindView(R.id.overviewTextView)
+    TextView mOverviewLabel;
 
 
     private Movie mMovie;
@@ -52,7 +51,7 @@ public class MovieDetailFragment extends Fragment {
         Picasso.with(view.getContext()).load(mMovie.getImageUrl()).into(mImageLabel);
 
         mTitleLabel.setText(mMovie.getTitle());
-//
+        mOverviewLabel.setText(mMovie.getOverview());
 
         return view;
     }

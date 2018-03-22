@@ -13,13 +13,17 @@ public class Movie {
 
     public Movie(){}
 
-    public Movie(String title, String imageUrl) {}
+
+//    public Movie(String title, String imageUrl) {
+//        this.title = title;
+//        this.imageUrl = "https://image.tmdb.org/t/p/original" + imageUrl;
+//    }
 
     public Movie(String title, String overview, String imageUrl) {
         this.title = title;
+        this.imageUrl = "https://image.tmdb.org/t/p/original" + imageUrl;
         this.overview = overview;
-//        this.cast = cast;
-        this.imageUrl = imageUrl;
+
     }
 
     public String getTitle() {
@@ -30,29 +34,14 @@ public class Movie {
         this.title = title;
     }
 
-//    public String getOverview() {
-//        return overview;
-//    }
-//
-//    public void setOverview(String tagline) {
-//        this.overview = tagline;
-//    }
+    public String getOverview() {
+        return overview;
+    }
 
-//    public String getGenre() {
-//        return genre;
-//    }
-//
-//    public void setGenre(String genre) {
-//        this.genre = genre;
-//    }
+    public void setOverview(String tagline) {
+        this.overview = tagline;
+    }
 
-//    public String getCast() {
-//        return cast;
-//    }
-//
-//    public void setCast(String cast) {
-//        this.cast = cast;
-//    }
 
     public String getImageUrl() {
         return imageUrl;

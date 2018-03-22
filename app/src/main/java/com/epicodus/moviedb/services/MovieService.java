@@ -47,17 +47,12 @@ public class MovieService {
             JSONObject movieJSON = new JSONObject(jsonData);
             JSONArray titlesJSON = movieJSON.getJSONArray("results");
             for (int i = 0; i < titlesJSON.length(); i++) {
-                movieJSON = titlesJSON.getJSONObject(i);
-                String title = movieJSON.getString("title");
+                JSONObject movieListJSON = titlesJSON.getJSONObject(i);
+                String title = movieListJSON.getString("title");
+                String overview = movieListJSON.getString("overview");
+                String imageUrl = movieListJSON.getString("poster_path");
 
-
-                String imageUrl = movieJSON.getString("poster_path");
-
-
-
-                Log.d(title, "title");
-
-                Movie movie = new Movie(title, imageUrl);
+                Movie movie = new Movie(title, overview, imageUrl);
                 movies.add(movie);
             }
         }
